@@ -17,13 +17,13 @@ struct TreeNode
 void levelOrderTraversal(TreeNode* root)
 {
     std::queue<TreeNode*> myQueue;
-    if (root == nullptr) 
+    if (root == nullptr) //dont forget to keep checks
     {
         return;
     }
     myQueue.push(root);
 
-    while(myQueue.empty() != true)
+    while(myQueue.empty() != true)   //  pop -> cout  -> push children
     {
         TreeNode* cur = myQueue.front();
         myQueue.pop();
