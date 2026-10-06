@@ -71,9 +71,8 @@ TreeNode* deleteNode(TreeNode* root, int value)
         {
             temp = temp -> right;
         }
-        root->value = temp ->value;
-        delete temp;
-        temp = nullptr;
+        root->value = temp ->value;   
+        root -> left  = deleteNode( root -> left, temp->value);  // need to handle dangling pointer!
         return root;
 
          //successor
@@ -84,8 +83,8 @@ TreeNode* deleteNode(TreeNode* root, int value)
         //     temp = temp -> left;
         // }
         // root->value = temp -> value;
-        // delete temp;
-        //temp = nullptr;
+        // 
+        //root ->right = deleteNode(root ->right, temp -> value);
         // return root;
     }
     }
