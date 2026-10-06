@@ -25,12 +25,12 @@ TreeNode* deleteNode(TreeNode* root, int value)
     if (root == nullptr)
     return nullptr;
 
-    if (root->value < value)
+    if (value < root -> value)
     {
         root -> left = deleteNode(root->left, value);
     }
 
-    else if (root -> value > value)
+    else if ( value >  root -> value)
     {
         root -> right = deleteNode(root->right, value);
     }
