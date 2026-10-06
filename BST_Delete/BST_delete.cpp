@@ -16,7 +16,7 @@ struct TreeNode
 
 
 
-
+// pointer
 TreeNode* deleteNode(TreeNode* root, int value)
 {
     //search
@@ -97,4 +97,70 @@ TreeNode* deleteNode(TreeNode* root, int value)
 
     return root;
 
+}
+
+
+// reference pointer
+void deleteNode_(TreeNode*& root, int value)
+{
+    if (root == nullptr)
+    {
+        return;
+    }
+
+    if (value < root -> value)
+    {
+        deleteNode_(root->left, value);
+    }
+    else if (value > root -> value)
+    {
+        deleteNode_(root -> right, value);
+    }
+
+    else
+    {
+        //no child
+        if (root ->left == nullptr && root -> right == nullptr)
+        {
+            delete root;
+            root = nullptr;
+            return;
+        }
+
+        //one child
+        else if (root -> left == nullptr)
+        {
+            TreeNode* temp = root ->right;
+            delete root;
+            root = temp;
+            return;
+
+        }
+
+        else if (root -> right == nullptr)
+        {
+            TreeNode* temp = root -> left;
+            delete root;
+            root = temp;
+            return;
+        }
+
+
+        //2 children
+
+        else
+        {
+            TreeNode* temp = root -> left;
+            while(temp -> right != nullptr)
+            {
+                temp = temp -> right;
+            }
+
+            root ->value = temp->value;
+            deleteNode_(root->left, temp->value);
+        }
+
+    }
+
+    return;
 }
