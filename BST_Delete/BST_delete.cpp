@@ -71,7 +71,7 @@ TreeNode* deleteNode(TreeNode* root, int value)
         {
             temp = temp -> right;
         }
-        root = temp;
+        root->value = temp ->value;
         delete temp;
         return root;
 
@@ -82,7 +82,7 @@ TreeNode* deleteNode(TreeNode* root, int value)
         // {
         //     temp = temp -> left;
         // }
-        // root = temp;
+        // root->value = temp -> value;
         // delete temp;
         // return root;
     }
