@@ -13,7 +13,7 @@ struct TreeNode
     TreeNode(int val) : value(val), left(nullptr), right(nullptr) {}
 };
 
-void postorderTraversal(TreeNode* root)
+void postorderTraversal(TreeNode* root)  
 {
     if (root == nullptr)
     {
