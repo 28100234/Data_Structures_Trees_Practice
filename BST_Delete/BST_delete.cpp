@@ -91,6 +91,7 @@ TreeNode* deleteNode(TreeNode* root, int value)
     else
     {
         cout << "Value doesnt exist in the tree :(";
+        return root;
     }
 
 }
