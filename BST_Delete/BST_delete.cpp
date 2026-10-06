@@ -95,4 +95,6 @@ TreeNode* deleteNode(TreeNode* root, int value)
         return root;
     }
 
+    return root;
+
 }
