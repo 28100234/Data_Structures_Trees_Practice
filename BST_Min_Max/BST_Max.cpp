@@ -17,7 +17,7 @@ struct TreeNode
 TreeNode* findMax(TreeNode* root)
 {
     if (root == nullptr)
-    return;     // never forget the safety line
+    return nullptr;     // never forget the safety line
 
     if (root ->right == nullptr)
     {
